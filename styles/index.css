@@ -7,6 +7,11 @@
     font-weight: 500;
 }
 
+::selection {
+    background: var(--light-blue);
+    color: var(--dark);
+}
+
 body {
     background-color: var(--dark);
     color: var(--white);
@@ -35,4 +40,10 @@ footer {
     color: var(--extra-subtext);
     font-size: 0.9em;
     padding: 8px 10px;
+
+    .heart {
+        color: var(--red);
+        filter: opacity(70%);
+        font-size: 12pt;
+    }
 }
