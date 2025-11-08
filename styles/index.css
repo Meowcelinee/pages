@@ -12,10 +12,66 @@
     color: var(--dark);
 }
 
+@keyframes painting-blur {
+    0% {
+        backdrop-filter: blur(0px);
+    }
+
+    15% {
+        backdrop-filter: blur(0px) brightness(95%);
+    }
+
+    100% {
+        backdrop-filter: blur(8px) brightness(70%);
+    }
+}
+
+@keyframes name-appear {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes scroll-appear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 0.75;
+        transform: translateY(0px);
+    }
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--black);
+    color: var(--black);
+
+    margin-left: 0 !important;
+    width: 50%;
+}
+
 body {
     background-color: var(--dark);
     color: var(--white);
     margin: 0;
+
+    display: flex;
+    flex-direction: column;
 
     h2,
     h3 {
@@ -29,11 +85,138 @@ body {
             filter: brightness(125%);
         }
     }
+
+    .painting {
+        background-image: url('../assets/img/marceline-painting-bg-compressed.png');
+        background-position: 50% 10%;
+        background-size: 1450px;
+        height: 750px;
+
+        .painting-overlay {
+            animation: 2000ms painting-blur ease-in-out;
+            backdrop-filter: blur(8px) brightness(70%);
+            height: 100%;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .name-container {
+                animation: 1500ms name-appear ease-in-out;
+                padding: 8px 10px;
+                margin-left: 30px;
+                width: 75%;
+
+                .name {
+                    color: var(--purple);
+                    font-weight: 800;
+                    font-size: 44pt;
+
+                    margin: 16px 0;
+                }
+
+                .name-subtext {
+                    color: var(--subtext2);
+                    font-weight: 300;
+                    font-size: 12pt;
+
+                    margin: 16px 0;
+
+                    #currentTime {
+                        color: var(--tan);
+                    }
+                }
+
+                .art-link {
+                    color: inherit;
+                }
+            }
+
+            .scroll-container {
+                animation: 3000ms scroll-appear ease-in-out;
+                border-radius: 10px;
+                font-size: 12pt;
+                display: flex;
+                justify-content: center;
+                margin: 0 auto;
+                opacity: 0.75;
+
+                .scroll {
+                    color: var(--subtext2);
+                }
+            }
+        }
+    }
 }
 
 main {
     background-color: var(--bg-night);
-    padding: 4px 8px;
+
+    hr {
+        width: 90%;
+    }
+
+    .heading {
+        color: var(--purple);
+        font-size: 32pt;
+        font-weight: 800;
+
+        margin: 12px 0;
+    }
+
+    .container {
+        margin: 20px 40px;
+
+        .about,
+        .projects {
+            .description {
+                color: var(--subtext1);
+                font-size: 12pt;
+                letter-spacing: 0.25px;
+                line-height: 1.75;
+            }
+
+            .link {
+                margin: 8px 0;
+
+                &::marker {
+                    content: '♡ ';
+                    font-size: 10pt;
+                    color: var(--baby-blue);
+                }
+
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .project-container {
+                .project-name {
+                    color: var(--tan);
+                    font-size: 15pt;
+                    margin-bottom: 0px;
+                    margin-top: 32px;
+
+                    a {
+                        color: inherit;
+                    }
+                }
+
+                .project-description {
+                    margin-top: 12px;
+                    color: var(--subtext2);
+                    font-size: 11pt;
+                    letter-spacing: 0.25px;
+                    line-height: 1.75;
+                }
+            }
+        }
+    }
 }
 
 footer {
@@ -45,5 +228,49 @@ footer {
         color: var(--red);
         filter: opacity(70%);
         font-size: 12pt;
+    }
+}
+
+@media (max-width: 650px) {
+    .painting {
+        background-size: 1100px !important;
+        background-position: 50% 5% !important;
+        height: 650px !important;
+
+        .painting-overlay {
+            .name-container {
+                margin-left: 8px !important;
+                width: 90% !important;
+
+                .name {
+                    font-size: 28pt !important;
+                }
+
+                .name-subtext {
+                    font-size: 11pt !important;
+                }
+            }
+        }
+    }
+
+    main {
+        hr {
+            width: 90%;
+        }
+
+        .heading {
+            font-size: 22pt;
+        }
+
+        .container {
+            margin: 20px 22px;
+
+            .about,
+            .projects {
+                .description {
+                    font-size: 11pt;
+                }
+            }
+        }
     }
 }

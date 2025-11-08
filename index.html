@@ -7,20 +7,73 @@
     <title>Marceline :3</title>
 
     <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="icon" type="image/png" href="/assets/lebean_blahaj.png" />
 </head>
 
 <body>
-    <main>
-        <div>
-            <h1>hi im marceline i love my wife</h1>
-        </div>
+    <div class="painting">
+        <div class="painting-overlay">
+            <div></div>
+            <div class="name-container">
+                <h1 class="name">marceline</h1>
 
-        <p><a href="https://github.com/Meowcelinee" target="_blank">uhh heres my github i guess</a></p>
-        <p><a href="https://queercraft.net/" target="_blank">cool people here</a></p>
+                <hr />
+
+                <p class="name-subtext">she/her</p>
+
+                <p class="name-subtext">CT, USA -- currently <span id="currentTime">[insert time here. you aren't
+                        supposed to see this text]</span> for me</p>
+
+                <p class="name-subtext">art by <a href="https://artby5klr.etsy.com/" target="_blank"
+                        class="art-link">5klr</a> &lt;3</p>
+            </div>
+            <div class="scroll-container">
+                <p class="scroll">more &#8595;</p>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="about">
+                <h1 class="heading">about</h1>
+                <hr />
+
+                <p class="description">i'm a 19 year old trans girl currently studying computer science because i'm a
+                    giant fucking stereotype. i sadly live in the united states- connecticut to be exact. i'm most
+                    familiar with html/css, javascript, and typescript; i'm <i>somewhat</i> familiar with python, and
+                    even less so with java (see my projects below).</p>
+
+                <p class="description">i struggle to explain my music taste in words so <a
+                        href="https://open.spotify.com/playlist/1QRxTPnGlCWrtSIdppsuvp?si=7b1cb985f0624ffe"
+                        target="_blank">here's</a> the link to my spotify playlist, which is <i>only</i> slightly
+                    outdated. (i'll replace it Soon&trade;)</p>
+
+                <p class="description">some other links:</p>
+
+                <!-- populated at runtime -->
+                <ul id="links"></ul>
+            </div>
+
+            <br />
+
+            <div class="projects">
+                <h1 class="heading">projects</h1>
+                <hr />
+
+                <p class="description">my motivation is very normal :thumbsup:</p>
+                <p class="description">disclaimer: these are only my finished, public projects. anything unfinished or
+                    private will obviously not be listed</p>
+
+                <!-- populated at runtime -->
+                <div id="projects"></div>
+            </div>
+        </div>
     </main>
 
     <footer>
-        created by marceline <span class="heart">♡</span> <span id="year"></span>
+        <p>created by marceline <span class="heart">♡</span> <span id="year"></span></p>
+        <p>hosted by git.gay</p>
     </footer>
 
     <script src="./lib/main.js" type="module"></script>
