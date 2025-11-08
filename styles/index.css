@@ -17,7 +17,7 @@
         backdrop-filter: blur(0px);
     }
 
-    15% {
+    35% {
         backdrop-filter: blur(0px) brightness(95%);
     }
 
@@ -27,9 +27,10 @@
 }
 
 @keyframes name-appear {
-    0% {
+    0%,
+    20% {
         opacity: 0;
-        transform: translateX(-300px);
+        transform: translateX(-400px);
     }
 
     100% {
@@ -93,7 +94,7 @@ body {
         height: 750px;
 
         .painting-overlay {
-            animation: 2000ms painting-blur ease-in-out;
+            animation: 2500ms painting-blur ease-in-out;
             backdrop-filter: blur(8px) brightness(70%);
             height: 100%;
             width: 100%;
@@ -103,7 +104,7 @@ body {
             justify-content: space-between;
 
             .name-container {
-                animation: 1500ms name-appear ease-in-out;
+                animation: 2000ms name-appear ease-in-out;
                 padding: 8px 10px;
                 margin-left: 30px;
                 width: 75%;
@@ -134,7 +135,7 @@ body {
             }
 
             .scroll-container {
-                animation: 3000ms scroll-appear ease-in-out;
+                animation: 3500ms scroll-appear ease-in-out;
                 border-radius: 10px;
                 font-size: 12pt;
                 display: flex;
