@@ -124,7 +124,8 @@ body {
 
                     margin: 16px 0;
 
-                    #currentTime {
+                    #currentTime,
+                    #hrtTime {
                         color: var(--tan);
                     }
                 }
