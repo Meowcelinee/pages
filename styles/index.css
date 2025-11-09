@@ -218,6 +218,37 @@ main {
                 }
             }
         }
+
+        /* 404 page */
+        .sad-container {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            width: 25%;
+            text-align: center;
+
+            padding: 80px 40px;
+            gap: 12px;
+
+            hr {
+                width: 100%;
+            }
+
+            .sad {
+                font-size: 48pt;
+                font-weight: 800;
+                margin: 16px;
+                text-align: center;
+            }
+
+            .sad-text {
+                color: #6e79ac;
+            }
+
+            .sad-link {
+                color: var(--red);
+            }
+        }
     }
 }
 
