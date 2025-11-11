@@ -56,6 +56,35 @@
     }
 }
 
+/*
+ * add icons to external github/git.gay links
+ * shoutout to git.gay for having a cool logo
+ */
+a[href^="https://github.com/"]::after
+{
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 16px;
+
+    background-image: url('../assets/github.png');
+    background-size: 16px 16px;
+    filter: brightness(150%);
+    margin-left: 6px;
+}
+
+a[href^="https://git.gay/"]::after
+{
+    display: inline-block;
+    content: '';
+    width: 18px;
+    height: 18px;
+
+    background-image: url('../assets/git.gay.png');
+    background-size: 18px 18px;
+    margin-left: 6px;
+}
+
 hr {
     border: none;
     height: 1px;
@@ -201,7 +230,7 @@ main {
                 .project-name {
                     color: var(--tan);
                     font-size: 15pt;
-                    margin-bottom: 0px;
+                    margin-bottom: 2px;
                     margin-top: 32px;
 
                     a {
@@ -210,11 +239,23 @@ main {
                 }
 
                 .project-description {
-                    margin-top: 12px;
+                    margin-top: 8px;
                     color: var(--subtext2);
                     font-size: 11pt;
                     letter-spacing: 0.25px;
                     line-height: 1.75;
+                }
+
+                .project-link {
+                    color: var(--purple);
+                    filter: brightness(85%);
+                    font-size: 10pt;
+                    font-style: italic;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }
